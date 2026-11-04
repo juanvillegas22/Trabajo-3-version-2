@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Petición 5</title>
+
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background: #0f172a;
+          color: #e2e8f0;
+          padding: 40px;
+      }
+
+      .box {
+          max-width: 900px;
+          margin: auto;
+          background: #1e293b;
+          padding: 35px;
+          border-radius: 18px;
+          border: 1px solid #334155;
+      }
+
+      a {
+          color: #7dd3fc;
+          text-decoration: none;
+      }
+
+      .hero {
+          margin-top: 25px;
+          background: #0f172a;
+          padding: 25px;
+          border-radius: 14px;
+          border-left: 4px solid #38bdf8;
+      }
+
+      .big {
+          font-size: 30px;
+          color: #38bdf8;
+          font-weight: bold;
+      }
+
+      .valor {
+          font-size: 22px;
+          color: #facc15;
+      }
+
+      .item-total {
+          background: #1e293b;
+          border: 1px solid #334155;
+          border-radius: 10px;
+          padding: 12px 16px;
+          margin-top: 10px;
+          color: #cbd5e1;
+          font-size: 14px;
+      }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <a href="/">← Volver</a>
+
+  <h1>Petición 5 · Método verTotales</h1>
+
+  <p>
+    Se llama al método <b>verTotales</b> desde un objeto de la clase <b>Ataque</b>
+    pasándole como parámetro la función creada en el punto 4.
+  </p>
+
+  <div class="hero" th:if="${objetoSeleccionado != null}">
+
+    <div class="big"
+         th:text="${objetoSeleccionado.nombre}">
+    </div>
+
+    <p>
+      Datos en conteo:
+      <span th:text="${objetoSeleccionado.conteo}"></span>
+    </p>
+
+    <p class="valor">
+      Total:
+      <b th:text="${totalObjetoSeleccionado}"></b>
+    </p>
+
+  </div>
+
+  <div class="hero">
+    <h2 style="margin-top: 0; color: #38bdf8; font-size: 18px;">
+      Resultado de verTotales en los objetos
+    </h2>
+    <div class="item-total" th:each="linea : ${totalesTodosLosObjetos}" th:text="${linea}"></div>
+  </div>
+
+</div>
+
+</body>
+</html>

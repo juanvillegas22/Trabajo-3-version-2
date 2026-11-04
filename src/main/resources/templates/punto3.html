@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Petición 3</title>
+
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background: #0f172a;
+          color: #e2e8f0;
+          padding: 40px;
+      }
+
+      .box {
+          max-width: 900px;
+          margin: auto;
+          background: #1e293b;
+          padding: 35px;
+          border-radius: 18px;
+          border: 1px solid #334155;
+      }
+
+      a {
+          color: #7dd3fc;
+          text-decoration: none;
+          font-size: 16px;
+      }
+
+      h1 {
+          margin-top: 25px;
+          color: #f8fafc;
+      }
+
+      p {
+          color: #cbd5e1;
+          line-height: 1.6;
+      }
+
+      .resultado {
+          margin-top: 30px;
+          background: #0f172a;
+          padding: 25px;
+          border-radius: 15px;
+          border-left: 4px solid #38bdf8;
+      }
+
+      .resultado h2 {
+          margin-top: 0;
+          color: #38bdf8;
+      }
+
+      .lista {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 20px;
+      }
+
+      .ataque {
+          background: #1e293b;
+          border: 1px solid #334155;
+          border-radius: 10px;
+          padding: 14px 18px;
+          color: #bae6fd;
+      }
+  </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+  <a href="/">← Volver</a>
+
+  <h1>Petición 3 · Conversión a Deque y filtro funcional</h1>
+
+  <p>
+    Se convierte el Stack en un Deque y se muestran con programación funcional
+    los objetos que tienen el enum <b th:text="${enumFiltro}"></b>.
+  </p>
+
+  <div class="resultado">
+
+    <h2 th:text="'Ataques con enum ' + ${enumFiltro}"></h2>
+
+    <div class="lista">
+
+      <div class="ataque"
+           th:each="linea : ${impresionFuncional}"
+           th:text="${linea}">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
